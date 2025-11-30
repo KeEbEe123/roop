@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter, useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
+import { useState } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -10,6 +11,7 @@ export default function Navbar() {
   const params = useParams();
   const locale = useLocale();
   const t = useTranslations("Navigation");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   // Get current locale from params or useLocale
   const currentLocale = (params.locale as string) || locale || 'en';
@@ -58,7 +60,7 @@ export default function Navbar() {
   };
   
   return (
-    <nav className="bg-[#E0F0F5] rounded-2xl px-5 py-1.5">
+    <nav className="bg-[#E0F0F5] rounded-2xl px-5 py-1.5 relative">
       <div className="flex items-center justify-between h-[54px]">
         {/* Logo with symbol and text - clickable to home */}
         <Link href={`/${currentLocale}`} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
@@ -77,7 +79,9 @@ export default function Navbar() {
             className="object-contain"
           />
         </Link>
-        <div className="flex items-center justify-between gap-6">
+
+        {/* Desktop Navigation - hidden on small screens */}
+        <div className="hidden min-[700px]:flex items-center justify-between gap-6">
           {nav.map((n) => (
             <Link 
               key={n.label} 
@@ -102,7 +106,56 @@ export default function Navbar() {
             />
           </button>
         </div>
+
+        {/* Mobile Menu Button - visible on small screens */}
+        <button 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="min-[700px]:hidden flex flex-col gap-1.5 w-6 h-6 justify-center items-center"
+          aria-label="Toggle menu"
+        >
+          <span className={`w-6 h-0.5 bg-[#0074B7] transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`w-6 h-0.5 bg-[#0074B7] transition-all ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`w-6 h-0.5 bg-[#0074B7] transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        </button>
       </div>
+
+      {/* Mobile Menu - dropdown */}
+      {isMenuOpen && (
+        <div className="min-[700px]:hidden absolute top-full left-0 right-0 mt-2 bg-[#E0F0F5] rounded-2xl shadow-lg overflow-hidden z-50">
+          <div className="flex flex-col py-2">
+            {nav.map((n) => (
+              <Link 
+                key={n.label} 
+                href={n.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={`px-5 py-3 text-[16px] font-semibold transition-colors ${
+                  pathname === n.href 
+                    ? "text-[#0074B7] font-bold bg-white/30" 
+                    : "hover:text-[#0074B7] hover:bg-white/20"
+                }`}
+              >
+                {n.label}
+              </Link>
+            ))}
+            <button 
+              onClick={() => {
+                toggleLanguage();
+                setIsMenuOpen(false);
+              }} 
+              className="px-5 py-3 text-[16px] font-semibold hover:bg-white/20 transition-colors flex items-center gap-2"
+            >
+              <Image 
+                src="/icons/translate.svg" 
+                alt="Translate" 
+                width={19} 
+                height={19}
+                className="object-contain"
+              />
+              <span>{currentLocale === 'en' ? 'हिंदी' : 'English'}</span>
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

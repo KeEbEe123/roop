@@ -144,9 +144,9 @@ export default function GalleryPage() {
       {/* Gallery Banner */}
       <section
         ref={bannerRef}
-        className="rounded-[18px] overflow-hidden relative w-full max-w-[1046px] mx-auto px-3 mb-20"
+        className="rounded-[18px] overflow-hidden relative w-full max-w-[1600px] mx-auto px-3 mb-12 md:mb-20"
       >
-        <div className="relative h-[250px] w-full">
+        <div className="relative h-[220px] sm:h-[280px] md:h-[350px] w-full">
           {/* Background image */}
           <div
             className="absolute inset-0 bg-cover bg-center rounded-[18px]"
@@ -161,12 +161,12 @@ export default function GalleryPage() {
             }}
           />
           {/* Content */}
-          <div className="absolute inset-0 p-8 flex items-end">
-            <div className="flex flex-col gap-2">
-              <h1 className="font-['Playfair_Display'] font-bold text-[48px] text-white leading-tight">
+          <div className="absolute inset-0 p-6 sm:p-8 md:p-12 flex items-end">
+            <div className="flex flex-col gap-2 sm:gap-3">
+              <h1 className="font-['Playfair_Display'] font-bold text-[36px] sm:text-[48px] md:text-[64px] text-white leading-tight">
                 {t("banner.title")}
               </h1>
-              <p className="text-white text-[22px]">
+              <p className="text-white text-[20px] sm:text-[24px] md:text-[30px]">
                 {t("banner.description")}
               </p>
             </div>
@@ -175,8 +175,9 @@ export default function GalleryPage() {
       </section>
 
       {/* Bento Grid Gallery */}
-      <section className="w-full max-w-[1046px] mx-auto px-3 mb-20">
-        <div className="grid grid-cols-6 grid-rows-8 gap-4 h-[1400px]">
+      <section className="w-full max-w-[1600px] mx-auto px-3 mb-12 md:mb-20">
+        {/* Desktop Grid - hidden on mobile */}
+        <div className="hidden md:grid grid-cols-6 grid-rows-8 gap-6 h-[1800px]">
           {/* Row 1 - slides from left */}
           <div
             ref={row1Ref}
@@ -268,17 +269,77 @@ export default function GalleryPage() {
             </div>
           </div>
         </div>
+
+        {/* Mobile Grid - simple 2-column layout */}
+        <div className="md:hidden grid grid-cols-2 gap-3 sm:gap-4">
+          <div className="col-span-2 relative rounded-[18px] overflow-hidden h-[250px] sm:h-[300px]">
+            <Image
+              src="/gallery/gallery1.png"
+              alt={t("imageAlt.gallery1")}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="relative rounded-[18px] overflow-hidden h-[180px] sm:h-[220px]">
+            <Image
+              src="/gallery/gallery2.png"
+              alt={t("imageAlt.gallery2")}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="relative rounded-[18px] overflow-hidden h-[180px] sm:h-[220px]">
+            <Image
+              src="/gallery/gallery3.png"
+              alt={t("imageAlt.gallery3")}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="col-span-2 relative rounded-[18px] overflow-hidden h-[250px] sm:h-[300px]">
+            <Image
+              src="/gallery/gallery4.png"
+              alt={t("imageAlt.gallery4")}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="relative rounded-[18px] overflow-hidden h-[180px] sm:h-[220px]">
+            <Image
+              src="/gallery/gallery5.png"
+              alt={t("imageAlt.gallery5")}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="relative rounded-[18px] overflow-hidden h-[180px] sm:h-[220px]">
+            <Image
+              src="/gallery/gallery6.png"
+              alt={t("imageAlt.gallery6")}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="col-span-2 relative rounded-[18px] overflow-hidden h-[250px] sm:h-[300px]">
+            <Image
+              src="/gallery/gallery7.png"
+              alt={t("imageAlt.gallery7")}
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
       </section>
 
       {/* Clinic Glimpses Carousel */}
-      <section ref={carouselRef} className="w-full max-w-[1046px] mx-auto px-3">
-        <div className="flex flex-col gap-16 items-center">
+      <section ref={carouselRef} className="w-full max-w-[1600px] mx-auto px-3">
+        <div className="flex flex-col gap-10 md:gap-20 items-center">
           {/* Header */}
-          <div className="flex flex-col gap-2 items-center text-center text-[#0c1119]">
-            <h2 className="font-['Playfair_Display'] font-bold text-[34px] leading-normal">
+          <div className="flex flex-col gap-3 items-center text-center text-[#0c1119]">
+            <h2 className="font-['Playfair_Display'] font-bold text-[32px] sm:text-[40px] md:text-[48px] leading-normal">
               {t("carousel.title")}
             </h2>
-            <p className="text-[22px] leading-normal">
+            <p className="text-[20px] sm:text-[24px] md:text-[30px] leading-normal">
               {t("carousel.description")}
             </p>
           </div>
@@ -292,10 +353,10 @@ export default function GalleryPage() {
               }}
               className="w-full"
             >
-              <CarouselContent className="-ml-4 scrollbar-hide">
+              <CarouselContent className="-ml-4 sm:-ml-5 scrollbar-hide">
                 {clinicImages.map((image, index) => (
-                  <CarouselItem key={index} className="pl-4 basis-auto">
-                    <div className="relative w-[320px] h-[320px] rounded-[18px] overflow-hidden">
+                  <CarouselItem key={index} className="pl-4 sm:pl-5 basis-auto">
+                    <div className="relative w-[320px] sm:w-[380px] md:w-[450px] h-[320px] sm:h-[380px] md:h-[450px] rounded-[18px] overflow-hidden">
                       <Image
                         src={image.src}
                         alt={image.alt}
@@ -306,8 +367,8 @@ export default function GalleryPage() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-4" />
-              <CarouselNext className="right-4" />
+              <CarouselPrevious className="left-2 sm:left-4 hidden sm:flex" />
+              <CarouselNext className="right-2 sm:right-4 hidden sm:flex" />
             </Carousel>
           </div>
         </div>

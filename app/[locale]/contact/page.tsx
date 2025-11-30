@@ -82,8 +82,8 @@ export default function ContactPage() {
   return (
     <div className="bg-[#f5f7f8] flex flex-col items-center gap-20 pb-16">
       {/* Contact Banner */}
-      <section ref={bannerRef} className="relative w-full max-w-[1046px] mx-auto px-3">
-        <div className="relative h-[250px] w-full rounded-[18px] overflow-hidden">
+      <section ref={bannerRef} className="relative w-full max-w-[1600px] mx-auto px-3">
+        <div className="relative h-[350px] w-full rounded-[18px] overflow-hidden">
           {/* Background image */}
           <div
             className="absolute inset-0 bg-cover bg-center rounded-inherit"
@@ -98,12 +98,12 @@ export default function ContactPage() {
             }}
           />
           {/* Content */}
-          <div className="absolute inset-0 p-8 flex items-end justify-between">
-            <div className="flex flex-col gap-2">
-              <h1 className="font-['Playfair_Display'] font-bold text-[48px] text-white leading-tight">
+          <div className="absolute inset-0 p-12 flex items-end justify-between">
+            <div className="flex flex-col gap-3">
+              <h1 className="font-['Playfair_Display'] font-bold text-[64px] text-white leading-tight">
                 {t("banner.title")}
               </h1>
-              <p className="text-white text-[22px]">
+              <p className="text-white text-[30px]">
                 {t("banner.description")}
               </p>
             </div>
@@ -112,45 +112,45 @@ export default function ContactPage() {
       </section>
 
       {/* Telephone Support & Email Assistance */}
-      <section ref={contactMethodsRef} className="w-full max-w-[1046px] mx-auto px-3 flex gap-12 items-start">
+      <section ref={contactMethodsRef} className="w-full max-w-[1600px] mx-auto px-3 flex gap-16 items-start">
         {/* Telephone Support */}
-        <div className="flex-1 flex flex-col gap-10 items-center">
-          <h2 className="font-['Playfair_Display'] text-[34px] leading-normal text-[#0c1119] text-center">
+        <div className="flex-1 flex flex-col gap-12 items-center">
+          <h2 className="font-['Playfair_Display'] text-[48px] leading-normal text-[#0c1119] text-center">
             {t("telephoneSupport.title")}
           </h2>
-          <div className="flex flex-col gap-4 items-center w-full">
-            <div className="flex gap-5 items-center">
-              <div className="bg-[#f6de84] rounded-full w-[52px] h-[52px] flex items-center justify-center">
-                <Phone className="w-6 h-6 text-[#0c1119]" />
+          <div className="flex flex-col gap-6 items-center w-full">
+            <div className="flex gap-6 items-center">
+              <div className="bg-[#f6de84] rounded-full w-[70px] h-[70px] flex items-center justify-center">
+                <Phone className="w-8 h-8 text-[#0c1119]" />
               </div>
-              <p className="font-semibold text-[22px] text-[#0c1119]">
+              <p className="font-semibold text-[28px] text-[#0c1119]">
                 {t("telephoneSupport.phone")}
               </p>
             </div>
-            <p className="font-light text-[16px] text-[#0c1119] text-center">
+            <p className="font-light text-[20px] text-[#0c1119] text-center">
               {t("telephoneSupport.availability")}
             </p>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="h-[208px] w-[1px] bg-[#0c1119] opacity-20"></div>
+        <div className="h-[280px] w-[1px] bg-[#0c1119] opacity-20"></div>
 
         {/* Email Assistance */}
-        <div className="flex-1 flex flex-col gap-10 items-center">
-          <h2 className="font-['Playfair_Display'] text-[34px] leading-normal text-[#0c1119] text-center">
+        <div className="flex-1 flex flex-col gap-12 items-center">
+          <h2 className="font-['Playfair_Display'] text-[48px] leading-normal text-[#0c1119] text-center">
             {t("emailAssistance.title")}
           </h2>
-          <div className="flex flex-col gap-4 items-center w-full">
-            <div className="flex gap-5 items-center">
-              <div className="bg-[#f6de84] rounded-full w-[52px] h-[52px] flex items-center justify-center">
-                <Mail className="w-6 h-6 text-[#0c1119]" />
+          <div className="flex flex-col gap-6 items-center w-full">
+            <div className="flex gap-6 items-center">
+              <div className="bg-[#f6de84] rounded-full w-[70px] h-[70px] flex items-center justify-center">
+                <Mail className="w-8 h-8 text-[#0c1119]" />
               </div>
-              <p className="font-semibold text-[22px] text-[#0c1119]">
+              <p className="font-semibold text-[28px] text-[#0c1119]">
                 {t("emailAssistance.email")}
               </p>
             </div>
-            <p className="font-light text-[16px] text-[#0c1119] text-center">
+            <p className="font-light text-[20px] text-[#0c1119] text-center">
               {t("emailAssistance.description")}
             </p>
           </div>
@@ -158,12 +158,12 @@ export default function ContactPage() {
       </section>
 
       {/* Stay in Touch Section */}
-      <section ref={stayInTouchRef} className="w-full max-w-[1046px] mx-auto px-3 flex gap-12 items-center">
+      <section ref={stayInTouchRef} className="w-full max-w-[1600px] mx-auto px-3 flex gap-16 items-center">
         {/* Image with decorative boxes */}
         <div className="relative flex-shrink-0">
-          <div className="absolute bg-[#f6de84] w-[133px] h-[172px] rounded-[22px] top-0 left-0 z-0"></div>
-          <div className="absolute bg-[#f6de84] w-[119px] h-[134px] rounded-[22px] bottom-0 right-0 z-0"></div>
-          <div className="relative w-[367px] h-[280px] rounded-[18px] overflow-hidden ml-[26px] mt-[20px] z-10">
+          <div className="absolute bg-[#f6de84] w-[180px] h-[230px] rounded-[22px] top-0 left-0 z-0"></div>
+          <div className="absolute bg-[#f6de84] w-[160px] h-[180px] rounded-[22px] bottom-0 right-0 z-0"></div>
+          <div className="relative w-[500px] h-[380px] rounded-[18px] overflow-hidden ml-[35px] mt-[27px] z-10">
             <Image
               src="/gallery/contactimages.png"
               alt="Medical consultation"
@@ -174,43 +174,43 @@ export default function ContactPage() {
         </div>
 
         {/* Content */}
-        <div className="flex flex-col gap-7 flex-1">
-          <h2 className="font-['Playfair_Display'] text-[48px] leading-tight text-[#0c1119]">
+        <div className="flex flex-col gap-9 flex-1">
+          <h2 className="font-['Playfair_Display'] text-[64px] leading-tight text-[#0c1119]">
             {t("stayInTouch.title")}
           </h2>
-          <p className="text-[18px] text-[#0c1119] leading-normal">
+          <p className="text-[24px] text-[#0c1119] leading-normal">
             {t("stayInTouch.description")}
           </p>
-          <div className="flex flex-col gap-3">
-            <div className="flex gap-5 items-start">
-              <div className="bg-[#f6de84] rounded-lg w-[36px] h-[36px] flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-5 h-5 text-[#0c1119]" />
+          <div className="flex flex-col gap-4">
+            <div className="flex gap-6 items-start">
+              <div className="bg-[#f6de84] rounded-lg w-[48px] h-[48px] flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-6 h-6 text-[#0c1119]" />
               </div>
-              <p className="text-[18px] text-[#0c1119] leading-normal flex-1">
+              <p className="text-[24px] text-[#0c1119] leading-normal flex-1">
                 {t("stayInTouch.address")}
               </p>
             </div>
-            <div className="flex gap-5 items-center">
-              <div className="bg-[#f6de84] rounded-lg w-[36px] h-[36px] flex items-center justify-center flex-shrink-0">
-                <Phone className="w-5 h-5 text-[#0c1119]" />
+            <div className="flex gap-6 items-center">
+              <div className="bg-[#f6de84] rounded-lg w-[48px] h-[48px] flex items-center justify-center flex-shrink-0">
+                <Phone className="w-6 h-6 text-[#0c1119]" />
               </div>
-              <p className="text-[18px] text-[#0c1119]">
+              <p className="text-[24px] text-[#0c1119]">
                 {t("stayInTouch.phone")}
               </p>
             </div>
-            <div className="flex gap-5 items-center">
-              <div className="bg-[#f6de84] rounded-lg w-[36px] h-[36px] flex items-center justify-center flex-shrink-0">
-                <Mail className="w-5 h-5 text-[#0c1119]" />
+            <div className="flex gap-6 items-center">
+              <div className="bg-[#f6de84] rounded-lg w-[48px] h-[48px] flex items-center justify-center flex-shrink-0">
+                <Mail className="w-6 h-6 text-[#0c1119]" />
               </div>
-              <p className="text-[18px] text-[#0c1119]">
+              <p className="text-[24px] text-[#0c1119]">
                 {t("stayInTouch.email")}
               </p>
             </div>
-            <div className="flex gap-5 items-center">
-              <div className="bg-[#f6de84] rounded-lg w-[36px] h-[36px] flex items-center justify-center flex-shrink-0">
-                <Instagram className="w-5 h-5 text-[#0c1119]" />
+            <div className="flex gap-6 items-center">
+              <div className="bg-[#f6de84] rounded-lg w-[48px] h-[48px] flex items-center justify-center flex-shrink-0">
+                <Instagram className="w-6 h-6 text-[#0c1119]" />
               </div>
-              <p className="text-[18px] text-[#0c1119]">
+              <p className="text-[24px] text-[#0c1119]">
                 {t("stayInTouch.instagram")}
               </p>
             </div>

@@ -41,22 +41,22 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           {/* Persistent navbar with gap below */}
           <div className="sticky top-3 z-50 flex w-full justify-center mb-8">
-            <div className="w-full max-w-[1067px] px-3">
+            <div className="w-full max-w-[1600px] px-3">
               <Navbar />
             </div>
           </div>
           <main className="w-full flex justify-center flex-1">
-            <div className="w-full max-w-[1067px] px-3">{children}</div>
+            <div className="w-full max-w-[1600px] px-3">{children}</div>
           </main>
           {/* Persistent footer - full width */}
-          <footer className="w-full bg-[#E0F0F5] px-5 md:px-20 py-11 mt-auto">
-            <div className="mx-auto max-w-[1067px] grid md:grid-cols-3 gap-10">
+          <footer className="w-full bg-[#E0F0F5] px-4 sm:px-5 md:px-20 py-12 md:py-16 mt-auto">
+            <div className="mx-auto max-w-[1600px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
               <div>
-                <h4 className="text-[26px] mb-5">
+                <h4 className="text-[24px] sm:text-[28px] md:text-[32px] mb-5 md:mb-6 font-semibold">
                   {messages.Footer?.quickNavigation?.title ||
                     "Quick Navigation"}
                 </h4>
-                <ul className="space-y-1.5 text-[18px]">
+                <ul className="space-y-2 text-[18px] sm:text-[20px] md:text-[22px]">
                   <li>
                     <Link href={`/${locale}`} className="hover:text-[#0074B7] transition-colors">
                       {messages.Footer?.quickNavigation?.home || "Home"}
@@ -86,10 +86,10 @@ export default async function RootLayout({
                 </ul>
               </div>
               <div>
-                <h4 className="text-[26px] mb-5">
+                <h4 className="text-[24px] sm:text-[28px] md:text-[32px] mb-5 md:mb-6 font-semibold">
                   {messages.Footer?.legal?.title || "Legal & Policy"}
                 </h4>
-                <ul className="space-y-1.5 text-[18px]">
+                <ul className="space-y-2 text-[18px] sm:text-[20px] md:text-[22px]">
                   <li>{messages.Footer?.legal?.privacy || "Privacy Policy"}</li>
                   <li>
                     {messages.Footer?.legal?.terms || "Terms & Conditions"}
@@ -97,11 +97,11 @@ export default async function RootLayout({
                   <li>{messages.Footer?.legal?.disclaimer || "Disclaimer"}</li>
                 </ul>
               </div>
-              <div>
-                <h4 className="text-[26px] mb-5">
+              <div className="sm:col-span-2 md:col-span-1">
+                <h4 className="text-[24px] sm:text-[28px] md:text-[32px] mb-5 md:mb-6 font-semibold">
                   {messages.Footer?.contactUs?.title || "Contact Us"}
                 </h4>
-                <ul className="space-y-2 text-[18px]">
+                <ul className="space-y-2.5 text-[18px] sm:text-[20px] md:text-[22px]">
                   <li>
                     {messages.Footer?.contactUs?.address ||
                       "3 Phulwani Plaza, Opposite Iskcon Temple 286, Mahashweta Nagar, Ujjain MP"}

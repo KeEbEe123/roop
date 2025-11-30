@@ -159,9 +159,9 @@ export default function Home() {
             {/* Content container */}
             <div className="absolute inset-0 p-6 md:p-10 flex items-center justify-between">
               {/* Left content */}
-              <div className="flex flex-col gap-5 max-w-[672px] z-10">
+              <div className="flex flex-col gap-5 max-w-[900px] z-10">
                 <h1
-                  className="text-[26px] md:text-[34px] text-white"
+                  className="text-[32px] md:text-[48px] text-white"
                   dangerouslySetInnerHTML={{
                     __html: t
                       .raw("hero.title")
@@ -172,17 +172,17 @@ export default function Home() {
                       .replace("</highlight>", "</span>"),
                   }}
                 />
-                <p className="text-white/90 text-[14px] md:text-[18px] max-w-[512px]">
+                <p className="text-white/90 text-[18px] md:text-[24px] max-w-[700px]">
                   {t("hero.description")}
                 </p>
                 <div className="flex gap-4">
                   <Link href="/contact">
-                    <button className="bg-[#F6DE84] text-[#0C1119] rounded-xl h-11 px-6 text-[16px] font-semibold hover:cursor-pointer">
+                    <button className="bg-[#F6DE84] text-[#0C1119] rounded-xl h-14 px-8 text-[20px] font-semibold hover:cursor-pointer">
                       {t("hero.consultButton")}
                     </button>
                   </Link>
                   <Link href="/services">
-                    <button className="border border-white text-white rounded-xl h-11 px-6 text-[16px] font-semibold hover:cursor-pointer">
+                    <button className="border border-white text-white rounded-xl h-14 px-8 text-[20px] font-semibold hover:cursor-pointer">
                       {t("hero.exploreButton")}
                     </button>
                   </Link>
@@ -201,14 +201,14 @@ export default function Home() {
         </section>
 
         {/* What We Offer */}
-        <section ref={servicesRef} className="flex flex-col items-center gap-6">
-          <div className="text-center max-w-[592px]">
-            <h2 className="text-[34px]">{t("services.title")}</h2>
-            <p className="text-[18px] text-[#0C1119]/80">
+        <section ref={servicesRef} className="flex flex-col items-center gap-8">
+          <div className="text-center max-w-[800px]">
+            <h2 className="text-[42px]">{t("services.title")}</h2>
+            <p className="text-[24px] text-[#0C1119]/80">
               {t("services.description")}
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[47px] w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[60px] w-full">
             {cards.map((c) => (
               <ServiceCard
                 key={c.title}
@@ -223,6 +223,66 @@ export default function Home() {
               {t("services.viewAll")}
             </button>
           </Link>
+        </section>
+
+        {/* Head to Toe Services Section */}
+        <section className="flex flex-col items-center gap-12">
+          <div className="text-center max-w-[900px]">
+            <h2 className="text-[42px] mb-3">Complete Care from Head to Toe</h2>
+            <p className="text-[24px] text-[#0C1119]/80">
+              Comprehensive aesthetic and cosmetic solutions for every part of your body
+            </p>
+          </div>
+
+          {/* Surgical Procedures */}
+          <div className="w-full">
+            <h3 className="text-[32px] font-semibold mb-6 text-[#0074B7]">Surgical Procedures</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
+              <ServiceCard title="Hair Transplant" description="Natural hair restoration" icon={{ src: "/icons/hairtransplant.svg", alt: "Hair Transplant" }} variant="centered" />
+              <ServiceCard title="Rhinoplasty" description="Nose reshaping surgery" icon={{ src: "/icons/rhinoplasty.svg", alt: "Rhinoplasty" }} variant="centered" />
+              <ServiceCard title="Otoplasty" description="Ear reshaping procedure" icon={{ src: "/icons/otoplasty.svg", alt: "Otoplasty" }} variant="centered" />
+              <ServiceCard title="Liposuction" description="Fat removal surgery" icon={{ src: "/icons/liposuction.svg", alt: "Liposuction" }} variant="centered" />
+              <ServiceCard title="Fat Grafting" description="Natural body contouring" icon={{ src: "/icons/fatgrafting.svg", alt: "Fat Grafting" }} variant="centered" />
+              <ServiceCard title="Tummy Tuck" description="Abdominal contouring" icon={{ src: "/icons/tummytuck.svg", alt: "Tummy Tuck" }} variant="centered" />
+              <ServiceCard title="Gynecomastia" description="Male breast reduction" icon={{ src: "/icons/gynecology.svg", alt: "Gynecomastia" }} variant="centered" />
+            </div>
+          </div>
+
+          {/* Non-Surgical Treatments */}
+          <div className="w-full">
+            <h3 className="text-[32px] font-semibold mb-6 text-[#0074B7]">Non-Surgical Treatments</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
+              <ServiceCard title="Botox & Fillers" description="Injectable treatments" icon={{ src: "/icons/face.svg", alt: "Botox" }} variant="centered" />
+              <ServiceCard title="Thread Lift" description="Non-surgical face lift" icon={{ src: "/icons/face.svg", alt: "Thread Lift" }} variant="centered" />
+              <ServiceCard title="Face Rejuvenation" description="Comprehensive facial care" icon={{ src: "/icons/face.svg", alt: "Face Rejuvenation" }} variant="centered" />
+              <ServiceCard title="Microneedling" description="Collagen induction therapy" icon={{ src: "/icons/microneedling.svg", alt: "Microneedling" }} variant="centered" />
+              <ServiceCard title="PRP Therapy" description="Platelet-rich plasma" icon={{ src: "/icons/prp.svg", alt: "PRP" }} variant="centered" />
+              <ServiceCard title="Chemical Peels" description="Skin rejuvenation" icon={{ src: "/icons/peels.svg", alt: "Peels" }} variant="centered" />
+              <ServiceCard title="Cosmetology" description="Advanced cosmetic care" icon={{ src: "/icons/cosmetology.svg", alt: "Cosmetology" }} variant="centered" />
+            </div>
+          </div>
+
+          {/* Laser Treatments */}
+          <div className="w-full">
+            <h3 className="text-[32px] font-semibold mb-6 text-[#0074B7]">Laser Treatments</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
+              <ServiceCard title="MNRF Celina" description="Micro-needling RF" icon={{ src: "/icons/mnrfcelina.svg", alt: "MNRF" }} variant="centered" />
+              <ServiceCard title="Tattoo Removal" description="Laser tattoo removal" icon={{ src: "/icons/tattooremoval.svg", alt: "Tattoo Removal" }} variant="centered" />
+              <ServiceCard title="Laser Hair Reduction" description="Permanent hair removal" icon={{ src: "/icons/laserhairreduction.svg", alt: "Laser Hair" }} variant="centered" />
+              <ServiceCard title="HIFU" description="Ultrasound skin tightening" icon={{ src: "/icons/hifu.svg", alt: "HIFU" }} variant="centered" />
+              <ServiceCard title="Hydrafacial" description="Deep cleansing treatment" icon={{ src: "/icons/face.svg", alt: "Hydrafacial" }} variant="centered" />
+            </div>
+          </div>
+
+          {/* Specialized Care */}
+          <div className="w-full">
+            <h3 className="text-[32px] font-semibold mb-6 text-[#0074B7]">Specialized Care</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+              <ServiceCard title="Gynecology" description="Women's health services" icon={{ src: "/icons/gynecology.svg", alt: "Gynecology" }} variant="centered" />
+              <ServiceCard title="Infertility Counselling" description="Expert guidance" icon={{ src: "/icons/infertilitycounselling.svg", alt: "Infertility" }} variant="centered" />
+              <ServiceCard title="Weight Loss Programs" description="Comprehensive management" icon={{ src: "/icons/weightloss.svg", alt: "Weight Loss" }} variant="centered" />
+            </div>
+          </div>
         </section>
 
         {/* Redefining section */}
@@ -266,49 +326,49 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[1046px]">
-            <div className="bg-[#E0F0F5] rounded-2xl p-6 flex gap-4">
-              <div className="rounded-2xl overflow-hidden w-[221px] h-[290px] flex-shrink-0">
+            <div className="bg-[#E0F0F5] rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row gap-4">
+              <div className="rounded-2xl overflow-hidden w-full sm:w-[221px] h-[290px] sm:h-[290px] flex-shrink-0">
                 <img
                   src="/gallery/raunak.png"
                   alt="Dr. Raunak Shinde"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="flex flex-col justify-between">
-                <div className="flex flex-col gap-4">
-                  <h3 className="text-[34px] font-bold">
+              <div className="flex flex-col justify-between gap-4">
+                <div className="flex flex-col gap-3 sm:gap-4">
+                  <h3 className="text-[24px] sm:text-[28px] md:text-[34px] font-bold">
                     {t("specialists.drRaunak.name")}
                   </h3>
-                  <p className="text-[18px]">
+                  <p className="text-[16px] sm:text-[18px]">
                     {t("specialists.drRaunak.description")}
                   </p>
                 </div>
                 <Link href="/doctors?tab=raunak">
-                  <button className="border border-[#0C1119] rounded-xl h-[42px] w-[145px] text-[16px] font-semibold hover:cursor-pointer">
+                  <button className="border border-[#0C1119] rounded-xl h-[42px] w-full sm:w-[145px] text-[16px] font-semibold hover:cursor-pointer">
                     {t("specialists.drRaunak.button")}
                   </button>
                 </Link>
               </div>
             </div>
-            <div className="bg-[#E0F0F5] rounded-2xl p-6 flex gap-4">
-              <div className="rounded-2xl overflow-hidden w-[226px] h-[290px] flex-shrink-0">
+            <div className="bg-[#E0F0F5] rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row gap-4">
+              <div className="rounded-2xl overflow-hidden w-full sm:w-[226px] h-[290px] sm:h-[290px] flex-shrink-0">
                 <img
                   src="/gallery/kavisha.png"
                   alt="Dr. Kavisha Lambhate"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="flex flex-col justify-between">
-                <div className="flex flex-col gap-4">
-                  <h3 className="text-[34px] font-bold">
+              <div className="flex flex-col justify-between gap-4">
+                <div className="flex flex-col gap-3 sm:gap-4">
+                  <h3 className="text-[24px] sm:text-[28px] md:text-[34px] font-bold">
                     {t("specialists.drKavisha.name")}
                   </h3>
-                  <p className="text-[16px]">
+                  <p className="text-[14px] sm:text-[16px]">
                     {t("specialists.drKavisha.description")}
                   </p>
                 </div>
                 <Link href="/doctors?tab=kavisha">
-                  <button className="border border-[#0C1119] rounded-xl h-[42px] w-[145px] text-[16px] font-semibold hover:cursor-pointer">
+                  <button className="border border-[#0C1119] rounded-xl h-[42px] w-full sm:w-[145px] text-[16px] font-semibold hover:cursor-pointer">
                     {t("specialists.drKavisha.button")}
                   </button>
                 </Link>

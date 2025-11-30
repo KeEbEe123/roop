@@ -141,12 +141,12 @@ export default function DoctorsPage() {
   return (
     <div className="bg-[#f5f7f8] flex flex-col items-center pb-0">
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <div className="w-full max-w-[1046px] px-3 mx-auto pt-8">
+        <div className="w-full max-w-[1600px] px-3 mx-auto pt-8">
           <TabsList className="grid w-full grid-cols-2 mb-8">
-            <TabsTrigger value="raunak" className="text-lg">
+            <TabsTrigger value="raunak" className="text-xl md:text-2xl">
               {t("drRaunak.name")}
             </TabsTrigger>
-            <TabsTrigger value="kavisha" className="text-lg">
+            <TabsTrigger value="kavisha" className="text-xl md:text-2xl">
               {t("drKavisha.name")}
             </TabsTrigger>
           </TabsList>
@@ -155,13 +155,13 @@ export default function DoctorsPage() {
         {/* Dr. Raunak Shinde Tab */}
         <TabsContent value="raunak" className="mt-0">
           <div className="flex flex-col w-full">
-            <div className="flex flex-col gap-20 pb-16 w-full max-w-[1046px] px-3 mx-auto">
+            <div className="flex flex-col gap-20 pb-16 w-full max-w-[1600px] px-3 mx-auto">
               {/* Hero Section */}
               <section
                 ref={raunakHeroRef}
-                className="bg-[#d5edfd] rounded-[18px] w-full p-[36px] flex items-center gap-[64px]"
+                className="bg-[#d5edfd] rounded-[18px] w-full p-4 sm:p-6 md:p-[48px] flex flex-col md:flex-row items-center gap-6 md:gap-[80px]"
               >
-                <div className="relative w-[286px] h-[376px] rounded-[22px] overflow-hidden flex-shrink-0">
+                <div className="relative w-full sm:w-[380px] h-[380px] sm:h-[500px] rounded-[22px] overflow-hidden flex-shrink-0">
                   <Image
                     src="/gallery/raunak.png"
                     alt="Dr. Raunak Shinde"
@@ -169,16 +169,16 @@ export default function DoctorsPage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="flex flex-col gap-[59px] text-[#0c1119] flex-1">
-                  <div className="flex flex-col gap-3">
-                    <h1 className="font-['Playfair_Display'] font-bold text-[48px] leading-normal">
+                <div className="flex flex-col gap-6 md:gap-[70px] text-[#0c1119] flex-1">
+                  <div className="flex flex-col gap-4">
+                    <h1 className="font-['Playfair_Display'] font-bold text-[40px] sm:text-[52px] md:text-[64px] leading-normal">
                       {t("drRaunak.name")}
                     </h1>
-                    <p className="font-semibold text-[22px] leading-normal">
+                    <p className="font-semibold text-[22px] sm:text-[26px] md:text-[30px] leading-normal">
                       {t("drRaunak.tagline")}
                     </p>
                   </div>
-                  <div className="text-[18px] leading-normal">
+                  <div className="text-[20px] sm:text-[24px] leading-normal">
                     <p className="mb-3">{t("drRaunak.intro1")}</p>
                     <p>{t("drRaunak.intro2")}</p>
                   </div>
@@ -188,17 +188,17 @@ export default function DoctorsPage() {
               {/* Expertise Section */}
               <section
                 ref={raunakExpertiseRef}
-                className="w-full flex flex-col gap-[51px] items-center"
+                className="w-full flex flex-col gap-[60px] items-center"
               >
-                <div className="flex flex-col gap-2 items-center text-center text-[#0c1119] max-w-[642px]">
-                  <h2 className="font-['Playfair_Display'] text-[34px] leading-normal">
+                <div className="flex flex-col gap-3 items-center text-center text-[#0c1119] max-w-[900px]">
+                  <h2 className="font-['Playfair_Display'] text-[44px] leading-normal">
                     {t("drRaunak.expertiseTitle")}
                   </h2>
-                  <p className="text-[18px] leading-normal">
+                  <p className="text-[24px] leading-normal">
                     {t("drRaunak.expertiseDescription")}
                   </p>
                 </div>
-                <div className="grid grid-cols-4 gap-[32px] w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-[48px] w-full">
                   {raunakExpertise.map((area) => (
                     <div key={area.title}>
                       <ServiceCard
@@ -220,10 +220,10 @@ export default function DoctorsPage() {
     w-[100vw] -ml-[50vw] -mr-[50vw]
     /* your existing classes below */
     bg-gradient-to-b from-[#f5f7f8] to-[rgba(0,116,183,0.6)]
-    flex items-center justify-center gap-[50px] py-[80px]
+    flex flex-col md:flex-row items-center justify-center gap-8 md:gap-[50px] py-12 md:py-[80px] px-4
   "
             >
-              <div className="flex flex-col items-center justify-between h-[820px] w-[320px]">
+              <div className="flex flex-col items-center justify-between h-auto md:h-[820px] w-full md:w-[320px] gap-8 md:gap-0">
                 <div
                   ref={raunakTimelineIcon1Ref}
                   className="bg-[#f6de84] rounded-full w-[200px] h-[200px] flex items-center justify-center"
@@ -242,10 +242,10 @@ export default function DoctorsPage() {
                   ref={raunakTimelineTrainingRef}
                   className="flex flex-col gap-4 items-center text-center text-[#0c1119]"
                 >
-                  <h3 className="font-['Playfair_Display'] text-[28px] leading-normal">
+                  <h3 className="font-['Playfair_Display'] text-[36px] leading-normal">
                     {t("drRaunak.trainingTitle")}
                   </h3>
-                  <div className="font-semibold text-[16px] leading-normal">
+                  <div className="font-semibold text-[20px] leading-normal">
                     <p className="mb-0">{t("drRaunak.training1")}</p>
                     <p className="mb-0">{t("drRaunak.training2")}</p>
                     <p>{t("drRaunak.training3")}</p>
@@ -267,17 +267,17 @@ export default function DoctorsPage() {
                 </div>
               </div>
 
-              <div className="h-[600px] w-[2px] bg-[#0c1119] opacity-20"></div>
+              <div className="hidden md:block h-[600px] w-[2px] bg-[#0c1119] opacity-20"></div>
 
-              <div className="flex flex-col items-center justify-between h-[720px] w-[400px]">
+              <div className="flex flex-col items-center justify-between h-auto md:h-[720px] w-full md:w-[400px] gap-8 md:gap-0">
                 <div
                   ref={raunakTimelineQualificationsRef}
                   className="flex flex-col gap-4 items-center text-center text-[#0c1119]"
                 >
-                  <h3 className="font-['Playfair_Display'] text-[28px] leading-normal">
+                  <h3 className="font-['Playfair_Display'] text-[36px] leading-normal">
                     {t("drRaunak.qualificationsTitle")}
                   </h3>
-                  <ul className="font-semibold text-[16px] leading-normal list-disc list-inside text-left space-y-1.5">
+                  <ul className="font-semibold text-[20px] leading-normal list-disc list-inside text-left space-y-2">
                     <li>{t("drRaunak.qualification1")}</li>
                     <li>{t("drRaunak.qualification2")}</li>
                     <li>{t("drRaunak.qualification3")}</li>
@@ -303,10 +303,10 @@ export default function DoctorsPage() {
                   ref={raunakTimelineCareRef}
                   className="flex flex-col gap-4 items-center text-center text-[#0c1119]"
                 >
-                  <h3 className="font-['Playfair_Display'] text-[28px] leading-normal">
+                  <h3 className="font-['Playfair_Display'] text-[36px] leading-normal">
                     {t("drRaunak.personalizedCareTitle")}
                   </h3>
-                  <p className="font-semibold text-[16px] leading-normal">
+                  <p className="font-semibold text-[20px] leading-normal">
                     {t("drRaunak.personalizedCareDescription")}
                   </p>
                 </div>
@@ -321,13 +321,13 @@ export default function DoctorsPage() {
     w-[100vw] -ml-[50vw] -mr-[50vw]
     /* your existing classes below */
     bg-gradient-to-b from-[#f5f7f8] to-[rgba(0,116,183,0.6)]
-    flex items-center justify-center gap-[50px] py-[80px]
+    flex flex-col md:flex-row items-center justify-center gap-8 md:gap-[50px] py-12 md:py-[80px] px-4
   "
             >
               <div className="relative">
-                <div className="absolute bg-[#f6de84] w-[100px] h-[130px] rounded-[18px] top-0 left-0 z-0"></div>
-                <div className="absolute bg-[#f6de84] w-[90px] h-[100px] rounded-[18px] bottom-0 right-0 z-0"></div>
-                <div className="relative w-[380px] h-[285px] rounded-[18px] overflow-hidden ml-[20px] mt-[18px] z-10">
+                <div className="absolute bg-[#f6de84] w-[80px] md:w-[100px] h-[100px] md:h-[130px] rounded-[18px] top-0 left-0 z-0"></div>
+                <div className="absolute bg-[#f6de84] w-[70px] md:w-[90px] h-[80px] md:h-[100px] rounded-[18px] bottom-0 right-0 z-0"></div>
+                <div className="relative w-[280px] sm:w-[380px] h-[210px] sm:h-[285px] rounded-[18px] overflow-hidden ml-[20px] mt-[18px] z-10">
                   <Image
                     src="/gallery/raunak1.png"
                     alt="Dr. Raunak Shinde at conference"
@@ -338,9 +338,9 @@ export default function DoctorsPage() {
               </div>
 
               <div className="relative">
-                <div className="absolute bg-[#f6de84] w-[90px] h-[100px] rounded-[18px] top-0 right-0 z-0"></div>
-                <div className="absolute bg-[#f6de84] w-[90px] h-[100px] rounded-[18px] bottom-0 left-0 z-0"></div>
-                <div className="relative w-[260px] h-[285px] rounded-[18px] overflow-hidden ml-[18px] mt-[16px] z-10">
+                <div className="absolute bg-[#f6de84] w-[70px] md:w-[90px] h-[80px] md:h-[100px] rounded-[18px] top-0 right-0 z-0"></div>
+                <div className="absolute bg-[#f6de84] w-[70px] md:w-[90px] h-[80px] md:h-[100px] rounded-[18px] bottom-0 left-0 z-0"></div>
+                <div className="relative w-[200px] sm:w-[260px] h-[210px] sm:h-[285px] rounded-[18px] overflow-hidden ml-[18px] mt-[16px] z-10">
                   <Image
                     src="/gallery/raunak2.png"
                     alt="Dr. Raunak Shinde presenting"
@@ -356,13 +356,13 @@ export default function DoctorsPage() {
         {/* Dr. Kavisha Lambhate Tab */}
         <TabsContent value="kavisha" className="mt-0">
           <div className="flex flex-col w-full">
-            <div className="flex flex-col gap-20 pb-16 w-full max-w-[1046px] px-3 mx-auto">
+            <div className="flex flex-col gap-20 pb-16 w-full max-w-[1600px] px-3 mx-auto">
               {/* Hero Section */}
               <section
                 ref={kavishaHeroRef}
-                className="bg-[#d5edfd] rounded-[18px] w-full p-[36px] flex items-center gap-[64px]"
+                className="bg-[#d5edfd] rounded-[18px] w-full p-4 sm:p-6 md:p-[48px] flex flex-col md:flex-row items-center gap-6 md:gap-[80px]"
               >
-                <div className="relative w-[286px] h-[376px] rounded-[22px] overflow-hidden flex-shrink-0">
+                <div className="relative w-full sm:w-[380px] h-[380px] sm:h-[500px] rounded-[22px] overflow-hidden flex-shrink-0">
                   <Image
                     src="/gallery/kavisha.png"
                     alt="Dr. Kavisha Lambhate"
@@ -370,16 +370,16 @@ export default function DoctorsPage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="flex flex-col gap-[59px] text-[#0c1119] flex-1">
-                  <div className="flex flex-col gap-3">
-                    <h1 className="font-['Playfair_Display'] font-bold text-[48px] leading-normal">
+                <div className="flex flex-col gap-6 md:gap-[70px] text-[#0c1119] flex-1">
+                  <div className="flex flex-col gap-4">
+                    <h1 className="font-['Playfair_Display'] font-bold text-[40px] sm:text-[52px] md:text-[64px] leading-normal">
                       {t("drKavisha.name")}
                     </h1>
-                    <p className="font-semibold text-[22px] leading-normal">
+                    <p className="font-semibold text-[22px] sm:text-[26px] md:text-[30px] leading-normal">
                       {t("drKavisha.tagline")}
                     </p>
                   </div>
-                  <div className="text-[18px] leading-normal">
+                  <div className="text-[20px] sm:text-[24px] leading-normal">
                     <p>{t("drKavisha.intro")}</p>
                   </div>
                 </div>
@@ -388,19 +388,19 @@ export default function DoctorsPage() {
               {/* Expertise Section */}
               <section
                 ref={kavishaExpertiseRef}
-                className="w-full flex flex-col gap-[51px] items-center"
+                className="w-full flex flex-col gap-[60px] items-center"
               >
-                <div className="flex flex-col gap-2 items-center text-center text-[#0c1119] max-w-[642px]">
-                  <h2 className="font-['Playfair_Display'] text-[34px] leading-normal">
+                <div className="flex flex-col gap-3 items-center text-center text-[#0c1119] max-w-[900px]">
+                  <h2 className="font-['Playfair_Display'] text-[44px] leading-normal">
                     {t("drKavisha.expertiseTitle")}
                   </h2>
-                  <p className="text-[18px] leading-normal">
+                  <p className="text-[24px] leading-normal">
                     {t("drKavisha.expertiseDescription")}
                   </p>
                 </div>
-                <div className="flex justify-center gap-[32px] w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-[48px] w-full">
                   {kavishaExpertise.map((area) => (
-                    <div key={area.title} className="w-[231px]">
+                    <div key={area.title}>
                       <ServiceCard
                         title={area.title}
                         icon={area.icon}
@@ -420,10 +420,10 @@ export default function DoctorsPage() {
     w-[100vw] -ml-[50vw] -mr-[50vw]
     /* your existing classes below */
     bg-gradient-to-b from-[#f5f7f8] to-[rgba(0,116,183,0.6)]
-    flex items-center justify-center gap-[50px] py-[80px]
+    flex flex-col md:flex-row items-center justify-center gap-8 md:gap-[50px] py-12 md:py-[80px] px-4
   "
             >
-              <div className="flex flex-col items-center justify-between h-[900px] w-[320px]">
+              <div className="flex flex-col items-center justify-between h-auto md:h-[900px] w-full md:w-[320px] gap-8 md:gap-0">
                 <div
                   ref={kavishaTimelineIcon1Ref}
                   className="bg-[#f6de84] rounded-full w-[200px] h-[200px] flex items-center justify-center"
@@ -468,9 +468,9 @@ export default function DoctorsPage() {
                 </div>
               </div>
 
-              <div className="h-[700px] w-[2px] bg-[#0c1119] opacity-20"></div>
+              <div className="hidden md:block h-[700px] w-[2px] bg-[#0c1119] opacity-20"></div>
 
-              <div className="flex flex-col items-center justify-between h-[900px] w-[400px]">
+              <div className="flex flex-col items-center justify-between h-auto md:h-[900px] w-full md:w-[400px] gap-8 md:gap-0">
                 <div
                   ref={kavishaTimelineQualificationsRef}
                   className="flex flex-col gap-4 items-center text-center text-[#0c1119]"
@@ -525,13 +525,13 @@ export default function DoctorsPage() {
     w-[100vw] -ml-[50vw] -mr-[50vw]
     /* your existing classes below */
     bg-gradient-to-b from-[#f5f7f8] to-[rgba(0,116,183,0.6)]
-    flex items-center justify-center gap-[50px] py-[80px]
+    flex flex-col md:flex-row items-center justify-center gap-8 md:gap-[50px] py-12 md:py-[80px] px-4
   "
             >
               <div className="relative">
-                <div className="absolute bg-[#f6de84] w-[70px] h-[115px] rounded-[18px] top-6 right-0 z-0"></div>
-                <div className="absolute bg-[#f6de84] w-[140px] h-[180px] rounded-[18px] bottom-0 left-0 z-0"></div>
-                <div className="relative w-[225px] h-[300px] rounded-[18px] overflow-hidden ml-[18px] mt-0 z-10">
+                <div className="absolute bg-[#f6de84] w-[60px] md:w-[70px] h-[90px] md:h-[115px] rounded-[18px] top-6 right-0 z-0"></div>
+                <div className="absolute bg-[#f6de84] w-[100px] md:w-[140px] h-[140px] md:h-[180px] rounded-[18px] bottom-0 left-0 z-0"></div>
+                <div className="relative w-[180px] sm:w-[225px] h-[240px] sm:h-[300px] rounded-[18px] overflow-hidden ml-[18px] mt-0 z-10">
                   <Image
                     src="/gallery/kavisha1.png"
                     alt="Dr. Kavisha Lambhate with patients"
@@ -542,9 +542,9 @@ export default function DoctorsPage() {
               </div>
 
               <div className="relative">
-                <div className="absolute bg-[#f6de84] w-[140px] h-[60px] rounded-[18px] top-0 left-[13px] z-0"></div>
-                <div className="absolute bg-[#f6de84] w-[70px] h-[115px] rounded-[18px] bottom-0 right-0 z-0"></div>
-                <div className="relative w-[187px] h-[305px] rounded-[18px] overflow-hidden ml-0 mt-[14px] z-10">
+                <div className="absolute bg-[#f6de84] w-[100px] md:w-[140px] h-[50px] md:h-[60px] rounded-[18px] top-0 left-[13px] z-0"></div>
+                <div className="absolute bg-[#f6de84] w-[60px] md:w-[70px] h-[90px] md:h-[115px] rounded-[18px] bottom-0 right-0 z-0"></div>
+                <div className="relative w-[150px] sm:w-[187px] h-[245px] sm:h-[305px] rounded-[18px] overflow-hidden ml-0 mt-[14px] z-10">
                   <Image
                     src="/gallery/kavisha2.png"
                     alt="Dr. Kavisha Lambhate at work"
@@ -555,9 +555,9 @@ export default function DoctorsPage() {
               </div>
 
               <div className="relative">
-                <div className="absolute bg-[#f6de84] w-[140px] h-[115px] rounded-[18px] top-0 right-0 z-0"></div>
-                <div className="absolute bg-[#f6de84] w-[70px] h-[115px] rounded-[18px] bottom-0 left-0 z-0"></div>
-                <div className="relative w-[231px] h-[308px] rounded-[18px] overflow-hidden ml-[18px] mt-[11px] z-10">
+                <div className="absolute bg-[#f6de84] w-[100px] md:w-[140px] h-[90px] md:h-[115px] rounded-[18px] top-0 right-0 z-0"></div>
+                <div className="absolute bg-[#f6de84] w-[60px] md:w-[70px] h-[90px] md:h-[115px] rounded-[18px] bottom-0 left-0 z-0"></div>
+                <div className="relative w-[185px] sm:w-[231px] h-[246px] sm:h-[308px] rounded-[18px] overflow-hidden ml-[18px] mt-[11px] z-10">
                   <Image
                     src="/gallery/kavisha3.png"
                     alt="Dr. Kavisha Lambhate with patient"
