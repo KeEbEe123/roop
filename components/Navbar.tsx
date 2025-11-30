@@ -69,14 +69,14 @@ export default function Navbar() {
             alt="Roop Clinic Logo" 
             width={43} 
             height={54}
-            className="object-contain"
+            className="object-contain brightness-50"
           />
           <Image 
             src="/logos/logoText.png" 
             alt="Roop Clinic" 
             width={93} 
             height={25}
-            className="object-contain"
+            className="object-contain brightness-50"
           />
         </Link>
 

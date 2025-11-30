@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import ServiceCard, { ServiceCardIcon } from "../../components/ServiceCard";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import React from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -14,8 +15,62 @@ export default function Home() {
   const servicesRef = useRef<HTMLDivElement>(null);
   const redefiningRef = useRef<HTMLDivElement>(null);
   const specialistsRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [showSplash, setShowSplash] = React.useState(true);
+  const [animationComplete, setAnimationComplete] = React.useState(false);
 
   useEffect(() => {
+    // Opening splash animation - only on first visit
+    const hasVisited = sessionStorage.getItem('hasVisitedHome');
+    
+    if (!hasVisited) {
+      // Prevent scrolling during splash
+      document.body.style.overflow = 'hidden';
+      
+      // Animate logo splash
+      const timeline = gsap.timeline({
+        onComplete: () => {
+          setShowSplash(false);
+          sessionStorage.setItem('hasVisitedHome', 'true');
+          
+          // After splash, fade in content
+          setTimeout(() => {
+            document.body.style.overflow = 'auto';
+            if (contentRef.current) {
+              gsap.fromTo(
+                contentRef.current,
+                { opacity: 0 },
+                { opacity: 1, duration: 0.8, ease: 'power2.out' }
+              );
+            }
+            setAnimationComplete(true);
+          }, 100);
+        }
+      });
+
+      timeline
+        .fromTo(
+          '.splash-logo',
+          { opacity: 0, scale: 1 },
+          { opacity: 1, scale: 1, duration: 0.6, ease: 'power2.out' }
+        )
+        .to('.splash-logo', { 
+          opacity: 0, 
+          duration: 0.4, 
+          delay: 0.4,
+          ease: 'power2.in' 
+        });
+    } else {
+      setShowSplash(false);
+      setAnimationComplete(true);
+      document.body.style.overflow = 'auto';
+    }
+  }, []);
+
+  useEffect(() => {
+    // Scroll-triggered animations only after splash is done
+    if (!animationComplete) return;
+
     // Hero section animation
     if (heroRef.current) {
       gsap.fromTo(
@@ -108,7 +163,7 @@ export default function Home() {
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, []);
+  }, [animationComplete]);
 
   const cards: {
     title: string;
@@ -139,7 +194,25 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col gap-20 pb-16">
+      {/* Splash Screen */}
+      {showSplash && (
+        <div className="fixed inset-0 z-[9999] bg-[#F5F7F8] flex items-center justify-center">
+          <div className="splash-logo flex items-center gap-6 scale-[]">
+            <img 
+              src="/logos/logoSymbol.png" 
+              alt="Roop Clinic Logo" 
+              className="h-[80px] w-auto object-contain brightness-75"
+            />
+            <img 
+              src="/logos/logoText.png" 
+              alt="Roop Clinic" 
+              className="h-[40px] w-auto object-contain brightness-75"
+            />
+          </div>
+        </div>
+      )}
+
+      <div ref={contentRef} className="flex flex-col gap-20 pb-16" style={{ opacity: showSplash ? 0 : 1 }}>
         {/* Hero */}
         <section ref={heroRef} className="rounded-2xl overflow-hidden relative">
           <div className="relative h-[340px] md:h-[380px] w-full">
