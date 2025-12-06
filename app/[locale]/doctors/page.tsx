@@ -167,7 +167,7 @@ export default function DoctorsPage() {
               >
                 <div className="relative w-full sm:w-[380px] h-[380px] sm:h-[500px] rounded-[22px] overflow-hidden flex-shrink-0">
                   <Image
-                    src="/gallery/raunak.png"
+                    src="/gallery/raunakAlt.JPG"
                     alt="Dr. Raunak Shinde"
                     fill
                     className="object-cover"
@@ -368,7 +368,7 @@ export default function DoctorsPage() {
               >
                 <div className="relative w-full sm:w-[380px] h-[380px] sm:h-[500px] rounded-[22px] overflow-hidden flex-shrink-0">
                   <Image
-                    src="/gallery/kavisha.png"
+                    src="/gallery/kavishaAlt.JPG"
                     alt="Dr. Kavisha Lambhate"
                     fill
                     className="object-cover"

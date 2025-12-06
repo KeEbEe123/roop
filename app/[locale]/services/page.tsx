@@ -336,14 +336,6 @@ export default function Services() {
     description: string;
   }[] = [
     {
-      title: t("surgical.hairTransplant.title"),
-      icon: {
-        src: "/icons/hairtransplant.svg",
-        alt: t("surgical.hairTransplant.title"),
-      },
-      description: t("surgical.hairTransplant.description"),
-    },
-    {
       title: t("surgical.liposuction.title"),
       icon: {
         src: "/icons/liposuction.svg",
@@ -390,6 +382,14 @@ export default function Services() {
         alt: t("surgical.otoplasty.title"),
       },
       description: t("surgical.otoplasty.description"),
+    },
+    {
+      title: t("surgical.hairTransplant.title"),
+      icon: {
+        src: "/icons/hairtransplant.svg",
+        alt: t("surgical.hairTransplant.title"),
+      },
+      description: t("surgical.hairTransplant.description"),
     },
   ];
 

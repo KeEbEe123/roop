@@ -352,13 +352,13 @@ export default function Home() {
           <div className="w-full">
             <h3 className="text-[24px] sm:text-[28px] md:text-[32px] font-semibold mb-4 sm:mb-6 text-[#0074B7]">Surgical Procedures</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
-              <ServiceCard title="Hair Transplant" description="Natural hair restoration" icon={{ src: "/icons/hairtransplant.svg", alt: "Hair Transplant" }} variant="centered" />
               <ServiceCard title="Rhinoplasty" description="Nose reshaping surgery" icon={{ src: "/icons/rhinoplasty.svg", alt: "Rhinoplasty" }} variant="centered" />
               <ServiceCard title="Otoplasty" description="Ear reshaping procedure" icon={{ src: "/icons/otoplasty.svg", alt: "Otoplasty" }} variant="centered" />
               <ServiceCard title="Liposuction" description="Fat removal surgery" icon={{ src: "/icons/liposuction.svg", alt: "Liposuction" }} variant="centered" />
               <ServiceCard title="Fat Grafting" description="Natural body contouring" icon={{ src: "/icons/fatgrafting.svg", alt: "Fat Grafting" }} variant="centered" />
               <ServiceCard title="Tummy Tuck" description="Abdominal contouring" icon={{ src: "/icons/tummytuck.svg", alt: "Tummy Tuck" }} variant="centered" />
               <ServiceCard title="Gynecomastia" description="Male breast reduction" icon={{ src: "/icons/gynecomastia.svg", alt: "Gynecomastia" }} variant="centered" />
+              <ServiceCard title="Hair Transplant" description="Natural hair restoration" icon={{ src: "/icons/hairtransplant.svg", alt: "Hair Transplant" }} variant="centered" />
             </div>
           </div>
 
